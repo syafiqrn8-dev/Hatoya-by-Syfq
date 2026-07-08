@@ -462,24 +462,6 @@ body {
   line-height: 1.6;
 }
 
-/* Tentu, sebagai Software Developer Anda, saya telah merancang renovasi menyeluruh untuk bagian Best Seller di website Hatoya Coffee Anda.
-
-Fokus utama desain ini adalah menciptakan harmoni antara teks dan visual menggunakan skema warna Coffee Warm (Krem, Latte Gold, dan Espresso Brown). Saya telah menambahkan efek interactive hover, badges, dan tipografi yang elegan untuk memastikan bagian ini benar-benar menarik perhatian pelanggan (eye-catching).
-
-Berikut adalah presentasi strategi desain dan kode implementasi lengkap untuk bagian Best Seller Anda.
-Hatoya Best Seller Design Strategy
-Jul 7, 2:11 PM
-
-Berikut adalah kode renovasi lengkap untuk bagian Best Seller yang dapat Anda pasang langsung di file index.html.
-
-Perubahan Utama:
-Struktur Grid: Menggunakan row row-cols-1 row-cols-md-3 agar sangat responsif (1 kolom di HP, 3 kolom di laptop).
-
-Visual Enhancement: Menambahkan Price Badge dan Interactive Overlay.
-
-Modern Styling: Menggunakan bayangan lembut (soft shadows) dan sudut yang membulat (rounded corners) 20px agar selaras dengan desain profil Anda sebelumnya. */
-
-/* ### 2. Update CSS (`style.css`) */
 /* ==========================================================================
    BEST SELLER CARD CUSTOM STYLING
    ========================================================================== */
@@ -645,4 +627,28 @@ Modern Styling: Menggunakan bayangan lembut (soft shadows) dan sudut yang membul
   background-color: #bc8a5f;
   transform: translateY(-2px);
   transition: 0.3s;
+}
+
+/* Update pada style.css */
+.tracking-widest {
+  letter-spacing: 0.2rem;
+}
+
+.badge.bg-accent {
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  border-radius: 50px;
+}
+
+.card {
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.navbar-nav .nav-link.active {
+  color: var(--accent-color) !important;
+  font-weight: 600;
 }
