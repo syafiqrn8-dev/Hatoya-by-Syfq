@@ -1,0 +1,648 @@
+/* Custom Properties */
+:root {
+  --primary-color: #1e1e1e;
+  --accent-color: #d4a373; /* Warna Latte/Coffee */
+  --accent-hover: #bc8a5f;
+  --text-white: #ffffff;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+.font-playfair {
+  font-family: "Playfair Display", serif;
+}
+
+.text-accent {
+  color: var(--accent-color);
+}
+
+.bg-accent {
+  background-color: var(--accent-color);
+}
+
+.btn-accent {
+  background-color: var(--accent-color);
+  border: none;
+  transition: 0.3s;
+}
+
+.btn-accent:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+/* Navbar */
+.transition-nav {
+  transition: all 0.4s ease;
+  background: transparent;
+}
+
+.filter-white {
+  filter: brightness(0) invert(1);
+}
+
+/* Hero Section */
+.hero-section {
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("https://images.unsplash.com/photo-1497933321188-ee538cd79734?q=80&w=2000&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.text-shadow-custom {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.rounded-custom {
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
+
+.hero-text-box h1 {
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Animations */
+.floating-anim {
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Hover Effects */
+.hover-link:hover {
+  color: var(--accent-color) !important;
+  padding-left: 5px;
+  transition: 0.3s;
+}
+
+/* Responsive fixes */
+@media (max-width: 991px) {
+  .navbar {
+    background-color: var(--primary-color) !important;
+  }
+}
+
+/* History Updated */
+/* Update pada style.css */
+.tracking-widest {
+  letter-spacing: 0.2rem;
+}
+
+.badge.bg-accent {
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  border-radius: 50px;
+}
+
+.card {
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.navbar-nav .nav-link.active {
+  color: var(--accent-color) !important;
+  font-weight: 600;
+}
+/* History Updated */
+
+/* Gallery Updated */
+/* Gallery Styles */
+.gallery-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  cursor: pointer;
+  height: 250px;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(212, 163, 115, 0.7); /* Accent Color with Transparency */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: white;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-card:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-item {
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* Filter Button Active Style */
+.filter-btn.active {
+  box-shadow: 0 4px 15px rgba(212, 163, 115, 0.4);
+}
+
+/* Lightbox Animation */
+#lightboxModal .modal-content {
+  animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/* Gallery Updated */
+
+/* Product Updated */
+/* Product Page Specific Styles */
+.product-card-item .card {
+  transition: all 0.3s ease;
+}
+
+.product-card-item .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+.product-card-item img {
+  transition: transform 0.5s ease;
+  object-fit: cover;
+  height: 200px;
+}
+
+.product-card-item .card:hover img {
+  transform: scale(1.05);
+}
+
+.input-group .form-control:focus {
+  border-color: var(--accent-color);
+  box-shadow: none;
+}
+
+.sticky-top {
+  transition: all 0.3s ease;
+}
+
+/* Button Customization */
+.btn-dark.rounded-circle {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+/* Product Updated */
+
+/* Portofolio Updated */
+
+/* Portofolio Updated */
+
+/* News Updated */
+/* News & Blog Styles */
+.news-card {
+  transition: all 0.3s ease-in-out;
+}
+
+.news-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
+}
+
+.news-card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.object-fit-cover {
+  object-fit: cover;
+}
+
+/* Pagination Customization */
+.page-link {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.page-link:hover {
+  background-color: var(--accent-color);
+  color: white !important;
+}
+
+.pagination .active .page-link {
+  background-color: var(--accent-color) !important;
+  color: white !important;
+}
+
+/* Badge Customization */
+.badge.bg-accent {
+  background-color: var(--accent-color) !important;
+}
+/* News Updated */
+
+/* --- RESPONSIVE OPTIMIZATION CODES --- */
+
+/* Pengaturan Dasar Gambar & Pembungkus Hero */
+.carousel-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Default tinggi layar penuh di desktop */
+  min-height: 500px;
+  background-color: #1a1a1a;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Mencegah gambar gepeng saat ditarik */
+  opacity: 0.5; /* Memberi efek gelap agar teks putih mudah dibaca */
+}
+
+/* Tipografi Dinamis Menggunakan Kombinasi CSS Clamp / Fluid */
+.hero-title {
+  font-size: clamp(1.8rem, 4vw, 3.8rem);
+  line-height: 1.2;
+}
+
+.hero-desc {
+  font-size: clamp(0.9rem, 1.5vw, 1.25rem);
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Kustomisasi Efek Shadow Teks */
+.text-shadow-custom {
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+/* --- MEDIA QUERIES UNTUK LAYAR HP & TABLET --- */
+
+/* Perangkat Mobile/HP (Layar di bawah 576px) */
+@media (max-width: 575.98px) {
+  .carousel-image-wrapper {
+    height: 70vh; /* Supaya di HP tidak terlalu memakan ruang ke bawah */
+    min-height: 400px;
+  }
+
+  .carousel-caption {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .custom-hero-btn {
+    padding: 10px 16px !important;
+    font-size: 0.85rem !important;
+  }
+
+  .inline-btn-mobile {
+    display: inline-block;
+    width: auto;
+  }
+
+  .content-img {
+    max-height: 300px;
+    object-fit: cover;
+  }
+}
+
+/* Perangkat Tablet/iPad (Layar antara 576px sampai 991.98px) */
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .carousel-image-wrapper {
+    height: 60vh;
+    min-height: 480px;
+  }
+
+  .custom-hero-btn {
+    padding: 12px 24px !important;
+    font-size: 1rem !important;
+  }
+}
+
+/* Memperbaiki Ukuran Icon & Jarak Padding di Layar Kecil */
+@media (max-width: 767.98px) {
+  section {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+
+  .adaptive-footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+}
+
+.box-team-1 {
+  /* Gunakan bayangan yang lebih halus agar terlihat profesional */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  padding: 24px 16px;
+  text-align: center;
+  background-color: rgba(94, 75, 40, 0.6); /* Transparansi agar elegan */
+  color: white;
+  border: 1px solid rgba(212, 163, 115, 0.2); /* Border tipis warna emas coffee */
+  transition: transform 0.3s ease;
+  height: 100%; /* Agar tinggi kotak sama semua */
+}
+
+.box-team-1:hover {
+  transform: translateY(-5px);
+  background-color: rgba(94, 75, 40, 0.9);
+  border-color: #d4a373; /* Warna accent saat hover */
+}
+
+.hover-faq:hover {
+  background-color: #bc8a5f;
+}
+
+.hover-faq::after {
+  background-color: #bc8a5f;
+}
+
+/* ==========================================================================
+   WARNA BACKGROUND UTAMA WEBSITE & VARIABEL TEMA KOPI
+   ========================================================================== */
+body {
+  background-color: #fbf9f6 !important; /* Warna krem lembut khas coffee shop hangat */
+  color: #332c28; /* Warna teks abu gelap kehitaman kopi */
+}
+
+/* Helper warna teks khusus */
+.text-coffee-dark {
+  color: #2b2118;
+}
+
+/* ==========================================================================
+   KUSTOMISASI KOMPONEN ACCORDION FAQ
+   ========================================================================== */
+.custom-faq-accordion .accordion-item {
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+/* Efek melayang saat item FAQ disorot */
+.custom-faq-accordion .accordion-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(94, 75, 40, 0.1) !important;
+}
+
+/* Mengubah tampilan tombol header akordeon default */
+.custom-faq-accordion .accordion-button {
+  background-color: #ffffff;
+  color: #4a3b32; /* Cokelat tua */
+  font-family: "Poppins", sans-serif;
+  padding: 20px;
+  font-size: 1.05rem;
+}
+
+/* Saat FAQ sedang aktif / Terbuka (Expanded) */
+.custom-faq-accordion .accordion-button:not(.collapsed) {
+  background-color: #efeae4; /* Latar tombol sedikit kecokelatan saat dibuka */
+  color: var(
+    --accent-color,
+    #d4a373
+  ); /* Teks berubah menjadi warna aksen emas/latte */
+  box-shadow: none;
+}
+
+/* Mengubah warna icon panah bawaan Bootstrap menjadi warna aksen */
+.custom-faq-accordion .accordion-button::after {
+  filter: sepia(50%) saturate(1000%) hue-rotate(340deg); /* Menyelaraskan warna panah ke cokelat */
+}
+
+/* Area konten jawaban */
+.custom-faq-accordion .accordion-body {
+  background-color: #ffffff;
+  padding: 20px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Tentu, sebagai Software Developer Anda, saya telah merancang renovasi menyeluruh untuk bagian Best Seller di website Hatoya Coffee Anda.
+
+Fokus utama desain ini adalah menciptakan harmoni antara teks dan visual menggunakan skema warna Coffee Warm (Krem, Latte Gold, dan Espresso Brown). Saya telah menambahkan efek interactive hover, badges, dan tipografi yang elegan untuk memastikan bagian ini benar-benar menarik perhatian pelanggan (eye-catching).
+
+Berikut adalah presentasi strategi desain dan kode implementasi lengkap untuk bagian Best Seller Anda.
+Hatoya Best Seller Design Strategy
+Jul 7, 2:11 PM
+
+Berikut adalah kode renovasi lengkap untuk bagian Best Seller yang dapat Anda pasang langsung di file index.html.
+
+Perubahan Utama:
+Struktur Grid: Menggunakan row row-cols-1 row-cols-md-3 agar sangat responsif (1 kolom di HP, 3 kolom di laptop).
+
+Visual Enhancement: Menambahkan Price Badge dan Interactive Overlay.
+
+Modern Styling: Menggunakan bayangan lembut (soft shadows) dan sudut yang membulat (rounded corners) 20px agar selaras dengan desain profil Anda sebelumnya. */
+
+/* ### 2. Update CSS (`style.css`) */
+/* ==========================================================================
+   BEST SELLER CARD CUSTOM STYLING
+   ========================================================================== */
+.best-seller-section {
+  background: linear-gradient(180deg, #fbf9f6 0%, #ffffff 100%);
+}
+
+.divider-coffee {
+  width: 60px;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
+
+.card-best-seller {
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.card-best-seller:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 15px 45px rgba(94, 75, 40, 0.15) !important;
+}
+
+.img-zoom {
+  transition: transform 0.8s ease;
+  height: 250px;
+  object-fit: cover;
+}
+
+.card-best-seller:hover .img-zoom {
+  transform: scale(1.1);
+}
+
+/* Badge di atas gambar */
+.card-badge-top {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: var(--accent-color);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 2;
+}
+
+/* Harga melayang */
+.price-overlay {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: rgba(43, 33, 24, 0.85); /* Dark Espresso Transparan */
+  color: #d4a373; /* Latte Gold */
+  padding: 8px 20px;
+  font-family: "Azeret Mono", monospace;
+  font-weight: 700;
+  border-top-left-radius: 20px;
+  z-index: 2;
+}
+
+/* Button outline accent custom */
+.btn-outline-accent {
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  transition: 0.3s;
+}
+
+.btn-outline-accent:hover {
+  background-color: var(--accent-color);
+  color: white;
+  border-color: var(--accent-color);
+}
+
+/* ==========================================================================
+   PARALLAX CTA CUSTOM STYLING
+   ========================================================================== */
+.parallax-container {
+  /* Gunakan gambar biji kopi premium */
+  background-image: url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=2000&auto=format&fit=crop");
+  min-height: 600px; /* Tinggi optimal untuk efek parallax */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Scrim/Overlay agar teks terbaca */
+.parallax-overlay {
+  background: linear-gradient(rgba(43, 33, 24, 0.7), rgba(43, 33, 24, 0.8));
+  height: 100%;
+  width: 100%;
+  padding: 80px 0;
+}
+
+/* Glassmorphism Effect for Newsletter */
+.newsletter-box {
+  background: rgba(255, 255, 255, 0.1); /* Transparansi */
+  backdrop-filter: blur(10px); /* Efek Blur */
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 550px;
+  color: white;
+}
+
+.newsletter-box .form-control {
+  border-radius: 10px 0 0 10px;
+  padding: 12px 20px;
+}
+
+.newsletter-box .btn-accent {
+  border-radius: 0 10px 10px 0;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+  .parallax-container {
+    background-attachment: scroll; /* Parallax biasanya berat/bermasalah di HP */
+    min-height: auto;
+  }
+  .parallax-overlay {
+    padding: 60px 15px;
+  }
+  .newsletter-box {
+    padding: 20px;
+  }
+}
+
+/* MODAL CUSTOM STYLES */
+.object-fit-cover {
+  object-fit: cover;
+}
+
+.modal-badge-status {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: var(--accent-color);
+  color: white;
+  padding: 6px 15px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(212, 163, 115, 0.4);
+}
+
+.text-coffee-dark {
+  color: #2b2118;
+}
+
+/* Taste profile tiles styling */
+.taste-profile .border {
+  border-color: #efeae4 !important;
+}
+
+.modal .btn-accent:hover {
+  background-color: #bc8a5f;
+  transform: translateY(-2px);
+  transition: 0.3s;
+}
