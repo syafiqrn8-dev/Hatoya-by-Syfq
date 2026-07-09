@@ -44,6 +44,296 @@ body {
   filter: brightness(0) invert(1);
 }
 
+/* ==========================================================================
+   NAVBAR TEXT HOVER ANIMATION (HATOYA CUSTOM)
+   ========================================================================== */
+
+/* 1. Reset & Setup Link */
+.navbar-nav .nav-link {
+  position: relative; /* Penting sebagai jangkar animasi */
+  color: rgba(255, 255, 255, 0.8) !important;
+  transition: color 0.3s ease;
+  padding: 0.5rem 0; /* Memberi ruang untuk garis bawah */
+  margin: 0 10px; /* Jarak antar menu */
+}
+
+/* 2. Warna teks saat Hover */
+.navbar-nav .nav-link:hover {
+  color: var(
+    --accent-color,
+    #d4a373
+  ) !important; /* Berubah ke warna Latte Gold */
+}
+
+/* 3. Membuat Garis Animasi Menggunakan Pseudo-Element */
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0; /* Awalnya garis tidak terlihat (lebar 0) */
+  height: 2px; /* Tebal garis */
+  bottom: 0;
+  left: 50%; /* Mulai dari tengah */
+  background-color: var(--accent-color, #d4a373);
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1); /* Animasi mulus */
+  transform: translateX(-50%); /* Penyeimbang agar benar-benar di tengah */
+}
+
+/* 4. Menjalankan Animasi saat Hover */
+.navbar-nav .nav-link:hover::after {
+  width: 80%; /* Garis memanjang hingga 80% lebar teks */
+}
+
+/* 5. Khusus untuk Link yang sedang Active */
+.navbar-nav .nav-link.active::after {
+  width: 80%;
+  background-color: var(--accent-color, #d4a373);
+}
+
+.navbar-nav .nav-link.active {
+  color: var(--accent-color, #d4a373) !important;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   DROPDOWN PREMIUM UPGRADE
+   ========================================================================== */
+
+/* 1. Menghilangkan tanda panah (caret) default Bootstrap yang mengganjal */
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+/* 2. Styling Wadah Dropdown (The Menu Box) */
+.navbar-nav .dropdown-menu {
+  background-color: rgba(30, 30, 30, 0.95); /* Warna gelap elegan */
+  backdrop-filter: blur(10px); /* Efek blur kaca */
+  border: 1px solid rgba(212, 163, 115, 0.2); /* Border tipis warna emas coffee */
+  border-radius: 15px; /* Sudut membulat */
+  padding: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  margin-top: 10px !important;
+  transition: all 0.3s ease;
+}
+
+/* 3. Styling Item di Dalam Dropdown */
+.dropdown-item {
+  color: rgba(255, 255, 255, 0.8) !important;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+/* 4. Efek Hover pada Item Dropdown */
+.dropdown-item:hover {
+  background-color: var(
+    --accent-color,
+    #d4a373
+  ) !important; /* Warna Latte Gold */
+  color: white !important;
+  transform: translateX(5px); /* Teks bergeser sedikit ke kanan */
+}
+
+/* 5. Animasi Muncul Dropdown (Slide & Fade) */
+@media (min-width: 992px) {
+  /* Membuat dropdown muncul saat di-hover (untuk Desktop) */
+  .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .dropdown-menu {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px); /* Mulai dari agak bawah */
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+/* 6. Tambahan: Menambahkan titik kecil di bawah menu "About Us" sebagai penanda */
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+}
+
+/* Indikator titik kecil menggantikan panah yang kaku */
+.dropdown-toggle::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  background-color: var(--accent-color, #d4a373);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.dropdown:hover .dropdown-toggle::before {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   NAVBAR & OFFCANVAS OPTIMIZATION
+   ========================================================================== */
+
+/* 1. Efek Garis Bawah HANYA untuk Desktop (Layar Lebar) */
+@media (min-width: 992px) {
+  .navbar-nav .nav-link {
+    position: relative;
+    margin: 0 10px;
+    padding: 0.5rem 0;
+  }
+
+  .navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--accent-color, #d4a373);
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transform: translateX(-50%);
+  }
+
+  .navbar-nav .nav-link:hover::after,
+  .navbar-nav .nav-link.active::after {
+    width: 100%; /* Garis penuh di bawah teks */
+  }
+}
+
+/* 2. Perbaikan Khusus Tampilan Mobile & iPad (Offcanvas) */
+@media (max-width: 991.98px) {
+  /* Menghilangkan garis yang mengganggu di sidebar */
+  .offcanvas-body .nav-link::after {
+    display: none !important;
+  }
+
+  /* Styling link di sidebar agar lebih bersih */
+  .offcanvas-body .nav-link {
+    font-size: 1.1rem;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Garis pemisah tipis */
+    color: #fff !important;
+  }
+
+  .offcanvas-body .nav-link.active {
+    color: var(--accent-color, #d4a373) !important;
+  }
+
+  /* UPGRADE DROPDOWN DI MOBILE */
+  .offcanvas-body .dropdown-menu {
+    background-color: rgba(
+      255,
+      255,
+      255,
+      0.05
+    ) !important; /* Warna agak terang dari background sidebar */
+    border: none;
+    border-left: 2px solid var(--accent-color, #d4a373); /* Garis aksen di samping */
+    margin: 10px 0 10px 15px !important; /* Menjorok ke dalam */
+    padding: 5px 0;
+    border-radius: 0;
+  }
+
+  .offcanvas-body .dropdown-item {
+    color: #ccc !important;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+
+  .offcanvas-body .dropdown-item:hover {
+    background: transparent;
+    color: var(--accent-color, #d4a373) !important;
+  }
+}
+
+/* 3. Perbaikan tombol Contact Us di Sidebar */
+.inline-btn-mobile {
+  background-color: var(--accent-color, #d4a373);
+  border: none;
+  border-radius: 10px !important;
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   NAVBAR HOVER EXCEPTION (RENOVASI)
+   ========================================================================== */
+
+@media (min-width: 992px) {
+  /* 1. Tambahkan :not(.btn-accent) agar tombol Contact Us tidak punya garis */
+  .navbar-nav .nav-link:not(.btn-accent) {
+    position: relative;
+    margin: 0 10px;
+    padding: 0.5rem 0;
+  }
+
+  /* 2. Tambahkan :not(.btn-accent) juga di sini */
+  .navbar-nav .nav-link:not(.btn-accent)::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--accent-color, #d4a373);
+    color: white !important;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transform: translateX(-50%);
+  }
+
+  /* 3. Pastikan garis hanya muncul pada menu selain tombol */
+  .navbar-nav .nav-link:not(.btn-accent):hover::after,
+  .navbar-nav .nav-link:not(.btn-accent).active::after {
+    width: 100%;
+  }
+}
+
+/* 4. HOVER KHUSUS UNTUK TOMBOL CONTACT US (Agar tetap keren tapi beda gaya) */
+.btn-accent {
+  transition: all 0.3s ease !important;
+}
+
+.btn-accent:hover {
+  background-color: #bc8a5f !important; /* Warna cokelat yang sedikit lebih gelap */
+  transform: translateY(-2px); /* Tombol sedikit naik ke atas */
+  box-shadow: 0 5px 15px rgba(212, 163, 115, 0.4); /* Memberikan efek cahaya/glow */
+  color: white !important;
+}
+
+/* ==========================================================================
+   FIX TOMBOL CONTACT US (SPECIFICITY UPGRADE)
+   ========================================================================== */
+
+/* 1. Keadaan Normal (Bukan Hover) */
+.navbar-nav .nav-link.btn-accent {
+  background-color: var(--accent-color, #d4a373) !important;
+  color: white !important; /* Warna teks putih saat normal */
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* 2. Keadaan saat HOVER (Dibuat sangat spesifik agar tidak dicuri dropdown) */
+.navbar-nav .nav-item .nav-link.btn-accent:hover {
+  background-color: #bc8a5f !important; /* Cokelat lebih gelap */
+  color: #ffffff !important; /* Memaksa warna teks tetap putih terang */
+  transform: translateY(-3px); /* Efek melayang lebih terasa */
+  box-shadow: 0 8px 20px rgba(188, 138, 95, 0.4) !important; /* Glow cokelat */
+}
+
+/* 3. Menghilangkan paksa garis bawah jika masih muncul */
+.navbar-nav .nav-link.btn-accent::after {
+  display: none !important;
+}
+
 /* Hero Section */
 .hero-section {
   min-height: 100vh;
