@@ -44,6 +44,15 @@ body {
   filter: brightness(0) invert(1);
 }
 
+/* Button Back To Top */
+#btn-back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  z-index: 1000;
+}
+
 /* ==========================================================================
    NAVBAR TEXT HOVER ANIMATION (HATOYA CUSTOM)
    ========================================================================== */
@@ -941,4 +950,62 @@ body {
 .navbar-nav .nav-link.active {
   color: var(--accent-color) !important;
   font-weight: 600;
+}
+
+/* 1. MENGUBAH BACKGROUND WEBSITE (DARI PUTIH KE OFF-WHITE) */
+body {
+  background-color: #fbf9f6 !important; /* Warna Krem Hangat agar kesan Coffee Shop kuat */
+}
+
+/* 2. STYLING ICON BOX PADA KONTAK (Lingkaran Kecil di depan info) */
+.icon-box-contact {
+  width: 45px;
+  height: 45px;
+  background-color: rgba(212, 163, 115, 0.1); /* Warna aksen transparan */
+  color: var(--accent-color); /* Emas Latte */
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+/* 3. STYLING FLOATING LABELS (Efek modern label Bootstrap) */
+.form-floating > .form-control:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 0.25rem rgba(212, 163, 115, 0.25);
+}
+
+.form-floating label {
+  color: #6c757d;
+  padding-left: 20px;
+}
+
+/* 4. SOCIAL MEDIA CIRCLE (Link medsos di sisi kiri) */
+.social-circle {
+  width: 40px;
+  height: 40px;
+  background-color: #f8f9fa;
+  color: #2b2118;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.social-circle:hover {
+  background-color: var(--accent-color);
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* 5. RESPONSIVE FIX (Agar di HP padding tidak terlalu lebar) */
+@media (max-width: 768px) {
+  .contact-info-card,
+  .form-container {
+    padding: 30px 20px !important;
+  }
 }
